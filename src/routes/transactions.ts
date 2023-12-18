@@ -46,7 +46,7 @@ export async function transactionsRoutes(app: FastifyInstance) {
     return { summary }
   })
 
-  app.post('/', { preHandler: [checkSessiIdExists] }, async (req, res) => {
+  app.post('/', async (req, res) => {
     let sessionId = req.cookies.sessionId
 
     if (!sessionId) {
